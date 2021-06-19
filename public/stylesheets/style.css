@@ -1,20 +1,55 @@
-.brand-logo {
-  margin-left: 15px;
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+#topNav {
+  background: black;
+  width: 390px;
+  height: 70px;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -9px;
 }
 
-#search-row form {
-  padding-top: 20px;
+#appTitle {
+  order: 1;
+  width: 213px;
+  height: 65px;
+  display: block;
+  margin-left: 88.4px;
+  margin-right: 0px;
+  padding-top: 5px;
 }
 
-.student-name {
-  position: relative;
-  top: -5px;
+#navLogin {
+  order: 2;
+  text-align: right;
+  background: black;
 }
 
-.collection-item form {
-  margin-top: -5px;
+#navLogin > a {
+  text-decoration: none;
+  color: #D6D382;
+  margin-right: 5px;
+  font-size: 15px;
 }
+
+#navLogin > a:hover {
+  color: grey;
+}
+
+#loginMain {
+  text-align: center;
+}
+
+button {
+  background: black;
+  color: #D6D382;
+}
+
+button:hover {
+  color: grey;
+}
+
