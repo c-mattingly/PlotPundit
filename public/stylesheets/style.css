@@ -74,6 +74,10 @@ header {
   text-align: center;
 }
 
+#addMovie {
+  text-align:center;
+}
+
 button {
   background: black;
   color: #D6D382;
@@ -84,3 +88,12 @@ button:hover {
   color: grey;
 }
 
+input[type=submit] {
+  background: black;
+  color: #D6D382;
+  border-radius: 7px;
+}
+
+input[type=submit]:hover {
+  color: grey;
+}
