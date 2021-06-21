@@ -4,7 +4,7 @@ module.exports = {
     new: newMovie, 
     create, 
     index,
-    show
+    // show
 };
 
 function index(req, res) {
@@ -21,21 +21,21 @@ function create(req, res) {
     const movie = new Movie(req.body);
     movie.save(function(err) {
         if (err) return res.redirect('/movies/new');
-        res.redirect(`/movies/${movie._id}`);
+        res.redirect(`/movies/${user._id}`);
     })
 }
 
-function show(req, res) {
-    Movie.findById(req.params.id)
-    ,populate('comments').exec(function(err, movieDoc) {
-    Comment.find(
-        {_id: {$nin: movieDoc.comments}},
-        function(err, commentsDocs){
-            res.render('movies/show', {
-                movie: movieDoc,
-                comments: commentsDocs
-            });
-        }
-    )
-    })
-}
+// function show(req, res) {
+//     Movie.findById(req.params.id)
+//     .populate('comments').exec(function(err, movieDoc) {
+//     Comment.find(
+//         {_id: {$nin: movieDoc.comments}},
+//         function(err, commentsDocs){
+//             res.render('movies/show', {
+//                 movie: movieDoc,
+//                 comments: commentsDocs
+//             });
+//         }
+//     )
+//     })
+// }
