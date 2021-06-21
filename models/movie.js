@@ -10,6 +10,7 @@ const commentSchema = new Schema({
 
 const movieSchema = new Schema({
     title: String,
+    user: [{type: Schema.Types.ObjectId, ref: 'User'}],
     year: Number,
     runtime: Number,
     mpaa: String,

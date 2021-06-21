@@ -18,6 +18,7 @@ function newMovie(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id
     const movie = new Movie(req.body);
     movie.save(function(err) {
         if (err) return res.redirect('/movies/new');
