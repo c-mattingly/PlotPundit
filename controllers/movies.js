@@ -1,5 +1,5 @@
 const Movie = require('../models/movie');
-const Comment = require('../models/comment')
+
 
 module.exports = {
     new: newMovie, 
@@ -9,8 +9,10 @@ module.exports = {
 };
 
 function index(req, res) {
-    Movie.find({}, function(err, movies) {
-        res.render('movies/index')
+    Movie.find({user: req.user._id}, function(err, movies) {
+        res.render('movies/index', {
+            movies
+        })
     });
 }
 
@@ -31,20 +33,17 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    res.render("movies/show");
-    // Movie.findById(req.params.id)
-    // .populate('comments').exec(function(err, movieDoc) {
-    //     console.log(movieDoc);
-    // if (Comment.content !== undefined) {
-    // Comment.find(
-    //     {_id: {$nin: movieDoc.comments}},
-    //     function(err, commentsDocs){
-    //         res.render("movies/show", {
-    //             movie: movieDoc,
-    //             comments: commentsDocs
-    //         });
-    //     }    
-    // )
-    // } 
-    // })
+    console.log(req.body.user);
+    Movie.findById(req.user._id, function(err, movieDoc) {
+        Comment.find(
+            {movie: movieDoc._id},
+            function(err, commentsDocs){
+                res.render('movies/show', {
+                    movie: movieDoc,
+                    comments: commentsDocs
+                }) 
+            }
+        )
+    })
+    
 }
