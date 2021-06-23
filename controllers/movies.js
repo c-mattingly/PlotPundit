@@ -6,7 +6,9 @@ module.exports = {
     create, 
     index,
     show,
-    delete: deleteMovie
+    delete: deleteMovie,
+    edit, 
+    update
 };
 
 
@@ -15,6 +17,25 @@ function deleteMovie(req, res) {
     res.redirect('/movies');
     })
 }
+
+function edit(req, res) {
+    Movie.findById(req.params.id, function(err, movieDoc) {
+        if(err) {
+            res.send(err);
+        } else {
+            res.render('movies/edit', {
+                movie: movieDoc
+            });
+        };
+    });
+};
+
+function update(req, res) {
+    Movie.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, movieDocs) {
+    });
+    res.redirect(`/movies/${req.params.id}`);
+    }
+
 
 function index(req, res) {
     Movie.find({user: req.user._id}, function(err, movies) {
