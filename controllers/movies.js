@@ -1,5 +1,5 @@
 const Movie = require('../models/movie');
-
+const Comment = require('../models/movie');
 
 module.exports = {
     new: newMovie, 
@@ -28,16 +28,16 @@ function create(req, res) {
     movie.save(function(err) {
         console.log(err);
         if (err) return res.redirect('/movies/new');
-        res.redirect(`/movies/${req.user._id}`);
+        res.redirect(`/movies/${movie._id}`);
     })
 }
 
 function show(req, res) {
-    console.log(req.body.user);
-    Movie.findById(req.user._id, function(err, movieDoc) {
+    Movie.findById(req.params.id, function(err, movieDoc) {
         Comment.find(
             {movie: movieDoc._id},
             function(err, commentsDocs){
+                console.log(commentsDocs, "comments");
                 res.render('movies/show', {
                     movie: movieDoc,
                     comments: commentsDocs

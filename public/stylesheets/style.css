@@ -57,6 +57,7 @@ header {
   order: 2;
   text-align: right;
   background: black;
+  width: 390px;
 }
 
 #navLogin > a {
@@ -72,10 +73,26 @@ header {
 
 #loginMain {
   text-align: center;
+  width: 360px;
+
+}
+
+#loginMain > a {
+  text-decoration: none;
+  color: blue;
 }
 
 #addMovie {
   text-align:center;
+}
+
+#movieShow > h2 {
+  text-align: center;
+}
+
+#movieShow > a {
+  text-decoration: none;
+  color: blue;
 }
 
 button {
