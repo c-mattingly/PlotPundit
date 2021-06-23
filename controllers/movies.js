@@ -51,8 +51,9 @@ function newMovie(req, res) {
 
 function create(req, res) {
     req.body.user = req.user._id;
-    req.body.comments = [];
-    console.log(req.body);
+    console.log(req.body.comments);
+    if(req.body.comments) req.body.comments = req.body.comments.split();
+    console.log(req.body.comments);
     const movie = new Movie(req.body);
     movie.save(function(err) {
         console.log(err);

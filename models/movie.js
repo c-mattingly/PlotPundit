@@ -17,7 +17,7 @@ const movieSchema = new Schema({
     platform: String,
     dateWatched: Date, 
     rating: Number, 
-    comments: {commentSchema}
+    comments: [commentSchema]
 }, {
     timestamps: true
 });
