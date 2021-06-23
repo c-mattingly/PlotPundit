@@ -17,6 +17,9 @@
      <br>
      <label><b>Comments:</b></label> <%= movie.comments.content %>
      <br>
+     <form action="/movies/<%= movie.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type='submit'>Delete</button>
+    </form> 
 </main>
 
 

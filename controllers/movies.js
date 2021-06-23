@@ -5,8 +5,16 @@ module.exports = {
     new: newMovie, 
     create, 
     index,
-    show
+    show,
+    delete: deleteMovie
 };
+
+
+function deleteMovie(req, res) {
+    Movie.findByIdAndDelete(req.params.id, function() {
+    res.redirect('/movies');
+    })
+}
 
 function index(req, res) {
     Movie.find({user: req.user._id}, function(err, movies) {
