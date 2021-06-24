@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const commentSchema = new Schema({
-    user: [{type: Schema.Types.ObjectId, ref: 'User'}],
+const commentsSchema = new Schema({
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    name: {type: Schema.Types.ObjectId, ref: 'User'},
     content: String
 }, {
     timestamps: true
@@ -17,7 +18,7 @@ const movieSchema = new Schema({
     platform: String,
     dateWatched: Date, 
     rating: Number, 
-    comments: [commentSchema]
+    comments: [commentsSchema]
 }, {
     timestamps: true
 });

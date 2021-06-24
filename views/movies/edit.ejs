@@ -35,12 +35,11 @@
         <option value="Other">Other</option>
     </select><br><br>
     <label>Date Watched:</label>
-    <input type="date" name="dateWatched" value="<%= movie.dateWatched %>"><br><br>
+    <input type="date" name="dateWatched" value="<%= movie.dateWatched.toDateString() %>"><br><br>
     <label>Rating (1-10):</label>
     <input type="number" name="rating" min="0" max="10" step=".5" value="<%= movie.rating %>" required><br><br>
     <label>Comments:</label>
-    <textarea name="comments" value="<%= movie.comments %>"></textarea><br><br>
-    <input id="addMovieBtn" type="submit" value="Edit Movie">
+    <div id="addMovieBtn"><input type="submit" value="Edit Movie"></div>
 </form>
 </main>
 

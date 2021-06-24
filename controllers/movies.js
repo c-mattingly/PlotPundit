@@ -51,12 +51,8 @@ function newMovie(req, res) {
 
 function create(req, res) {
     req.body.user = req.user._id;
-    console.log(req.body.comments);
-    if(req.body.comments) req.body.comments = req.body.comments.split();
-    console.log(req.body.comments);
     const movie = new Movie(req.body);
     movie.save(function(err) {
-        console.log(err);
         if (err) return res.redirect('/movies/new');
         res.redirect(`/movies/${movie._id}`);
     })
@@ -67,10 +63,9 @@ function show(req, res) {
         Comment.find(
             {movie: movieDoc._id},
             function(err, commentsDocs){
-                console.log(commentsDocs, "comments");
                 res.render('movies/show', {
                     movie: movieDoc,
-                    comments: commentsDocs
+                    comment: commentsDocs
                 }) 
             }
         )

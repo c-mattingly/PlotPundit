@@ -1,35 +1,40 @@
 <%- include('../partials/header') %>
 
 <main id="loginMain">
-    <% if (user) { %>
-        <h2>Hello <%= user.name %></h2>
-        <h4>here are the movies you've rated</h4>
-        <table id="list">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Release Year</th>
-                <th>Platform</th>
-                <th>Date Watched</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% movies.forEach(function(m) { %>
+    <% if (movies.length) { %>
+        <% if (user) { %>
+            <h2>Hello <%= user.name %></h2>
+            <h4>Here Are The Movies You've Rated</h4>
+            <table id="list">
+                <thead>
                 <tr>
-                  <td><a href="/movies/<%= m._id %>"><%= m.title %></a></td>
-                  <td><%= m.year %></td>
-                  <td><%= m.platform %></td>
-                  <td><%= m.dateWatched %></td>
-                  <td><%= m.rating %></td>
+                    <th>Title</th>
+                    <th>Release Year</th>
+                    <th>Platform</th>
+                    <th>Date Watched</th>
+                    <th>Rating</th>
                 </tr>
+                </thead>
+                <tbody>
+                <% movies.forEach(function(m) { %>
+                    <tr>
+                        <td><a href="/movies/<%= m._id %>"><%= m.title %></a></td>
+                        <td><%= m.year %></td>
+                        <td><%= m.platform %></td>
+                        <td><%= m.dateWatched.toDateString() %></td>
+                        <td><%= m.rating %></td>
+                    </tr>
                 <% }); %>
               </tbody>
             </table>
-        
-      <% } else { %>
-        <a href="/auth/google"><button>Login with Google</button></a>
-      <% } %>       
+        <% } else { %>
+            <a href="/auth/google"><button>Login with Google</button></a>
+        <% } %>       
+    <% } else { %>
+        <h2>Hello <%= user.name %></h2>
+        <h4>Add Some Movies!</h4>
+     
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

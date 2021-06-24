@@ -82,27 +82,44 @@ header {
   color: blue;
 }
 
-#addMovie {
+#addMovie > h1 {
   text-align:center;
+}
+
+#addMovieBtn {
+  text-align: center;
+}
+
+#editMovie > h1 {
+  text-align: center;
 }
 
 #movieShow > h2 {
   text-align: center;
 }
 
-#movieShow > a {
+td > a {
   text-decoration: none;
   color: blue;
+}
+
+td > a:hover {
+  color: #D6D382;
 }
 
 button {
   background: black;
   color: #D6D382;
   border-radius: 7px;
+  text-align: center;
 }
 
 button:hover {
   color: grey;
+}
+
+#centerBtn {
+  text-align: center;
 }
 
 input[type=submit] {

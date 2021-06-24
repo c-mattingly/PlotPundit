@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+ 
 <main id="movieShow">
 <h2><%= movie.title %></h2>
     <br>
@@ -11,19 +11,30 @@
     <br>
     <label><b>Platform:</b></label> <%= movie.platform %>
      <br>
-     <label><b>Date Watched:</b></label> <%= movie.dateWatched %>
+     <label><b>Date Watched:</b></label> <%= movie.dateWatched.toDateString() %>
      <br>
      <label><b>Rating:</b></label> <%= movie.rating %>
      <br>
-     <label><b>Comments:</b></label> <%= movie.comments.content %>
+     <% if (movie.comments.length) { %>
+        <% movie.comments.forEach(function(c) { %>
+            <label><b>Comments:</b></label><br><br>
+            <i><%= c.createdAt.toLocaleDateString() %></i><br>
+            <%= c.content %><br><br>
+    <% }) %>
+     <% } else { %>
+        <form action="/movies/<%= movie._id %>" method="POST">
+            <input type="text" name="content">
+            <button type="submit">Add Comment</button>
+          </form>
+    <% } %>
      <br>
      <br>
      <form action="/movies/<%= movie._id %>/edit" class="edit-form" method="GET">
-        <button type="submit">Edit</button>
+        <button id="centerBtn" type="submit">Edit</button>
         </form>
      <br>
      <form action="/movies/<%= movie.id %>?_method=DELETE" class="delete-form" method="POST">
-        <button type='submit'>Delete</button>
+        <button id="centerBtn" type='submit'>Delete</button>
     </form> 
 </main>
 

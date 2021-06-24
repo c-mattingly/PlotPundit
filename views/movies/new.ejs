@@ -6,7 +6,7 @@
     <label>Title:</label>
     <input type="text" name="title" required><br><br>
     <label>Release Year:</label>
-    <input type="number" name="year" min="1900" required><br><br>
+    <input type="number" name="year" min="1900" max="2500" required><br><br>
     <label>Runtime (in Minutes):</label>
     <input type="number" name="runtime" min="1" required><br><br>
     <label>MPAA Rating:</label>
@@ -36,12 +36,8 @@
     <input type="date" name="dateWatched"><br><br>
     <label>Rating (1-10):</label>
     <input type="number" name="rating" min="0" max="10" step=".5" required><br><br>
-    <label>Comments:</label>
-    <textarea name="comments"></textarea><br><br>
-    <input id="addMovieBtn" type="submit" value="Add Movie">
+    <div id="addMovieBtn"><input type="submit" value="Add Movie"></div>
 </form>
 </main>
-
-
 
 <%- include('../partials/footer') %>
