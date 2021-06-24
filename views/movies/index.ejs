@@ -1,9 +1,22 @@
 <%- include('../partials/header') %>
 
 <main id="loginMain">
-    <% if (movies.length) { %>
+    <% if (movies.length) { %> 
+        <% let today = new Date();
+
+        let timeDay = today.getHours();
+        let greeting = "";
+        
+        if (timeDay >= 0 && timeDay< 12) {
+          greeting = "Good Morning ";
+        } else if (timeDay >= 12 && timeDay < 18) {
+        greeting = "Good Afternoon ";
+        } else {
+        greeting ="Good Evening ";
+        }%> 
+
         <% if (user) { %>
-            <h2>Hello <%= user.name %></h2>
+            <h2> <%= greeting %> <%= user.name %></h2> 
             <h4>Here Are The Movies You've Rated</h4>
             <table id="list">
                 <thead>
@@ -37,4 +50,4 @@
     <% } %>
 </main>
 
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> 

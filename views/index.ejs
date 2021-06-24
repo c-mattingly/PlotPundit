@@ -3,7 +3,19 @@
 <main id="loginMain">
     <h1 id="welcome">Welcome to Plot Pundit</h1><br>
     <% if (user) { %>
-        <h2>Hello <%= user.name %> </h2>
+      <% let today = new Date();
+
+        let timeDay = today.getHours();
+        let greeting = "";
+        
+        if (timeDay >= 0 && timeDay< 12) {
+          greeting = "Good Morning ";
+        } else if (timeDay >= 12 && timeDay < 18) {
+        greeting = "Good Afternoon ";
+        } else {
+        greeting ="Good Evening ";
+        }%> 
+        <h2> <%= greeting %> <%= user.name %> </h2> 
       <% } else { %>
         <a href="/auth/google"><button>Login with Google</button></a>
       <% } %>       

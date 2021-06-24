@@ -5,39 +5,42 @@
     <br>
     <label><b>Year:</b></label> <%= movie.year %> 
     <br>
+    <br>
     <label><b>Runtime:</b></label> <%= movie.runtime %> Minutes
+    <br>
     <br>
     <label><b>MPAA Rating:</b></label> <%= movie.mpaa %>
     <br>
+    <br>
     <label><b>Platform:</b></label> <%= movie.platform %>
+     <br>
      <br>
      <label><b>Date Watched:</b></label> <%= movie.dateWatched.toDateString() %>
      <br>
+     <br>
      <label><b>Rating:</b></label> <%= movie.rating %>
+     <br>
      <br>
      <% if (movie.comments.length) { %>
         <% movie.comments.forEach(function(c) { %>
-            <label><b>Comments:</b></label><br><br>
-            <i><%= c.createdAt.toLocaleDateString() %></i><br>
-            <%= c.content %><br><br>
+            <label><b>Comments:</b></label> <%= c.content %><br><br><br><br>
+            
     <% }) %>
      <% } else { %>
-        <form action="/movies/<%= movie._id %>" method="POST">
-            <input type="text" name="content">
+        <form id="addCom" action="/movies/<%= movie._id %>" method="POST">
+            <input type="text" name="content" required>
             <button type="submit">Add Comment</button>
           </form>
     <% } %>
      <br>
      <br>
-     <form action="/movies/<%= movie._id %>/edit" class="edit-form" method="GET">
+     <form id="formBtn" action="/movies/<%= movie._id %>/edit" class="edit-form" method="GET">
         <button id="centerBtn" type="submit">Edit</button>
         </form>
      <br>
-     <form action="/movies/<%= movie.id %>?_method=DELETE" class="delete-form" method="POST">
+     <form id="formBtn" action="/movies/<%= movie.id %>?_method=DELETE" class="delete-form" method="POST">
         <button id="centerBtn" type='submit'>Delete</button>
     </form> 
 </main>
-
-
 
 <%- include('../partials/footer') %>

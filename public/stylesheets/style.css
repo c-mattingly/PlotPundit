@@ -74,12 +74,19 @@ header {
 #loginMain {
   text-align: center;
   width: 360px;
+}
 
+#loginMain > h4 {
+  margin-top: -20px;
 }
 
 #loginMain > a {
   text-decoration: none;
   color: blue;
+}
+
+#addMovie {
+  margin-left: 20px;
 }
 
 #addMovie > h1 {
@@ -92,12 +99,20 @@ header {
 
 #editMovie > h1 {
   text-align: center;
+  margin-left: 10px;
+}
+
+#movieShow {
+  margin-left: 20px;
 }
 
 #movieShow > h2 {
   text-align: center;
 }
 
+#editMovie {
+  margin-left: 20px;
+}
 td > a {
   text-decoration: none;
   color: blue;
@@ -119,6 +134,14 @@ button:hover {
 }
 
 #centerBtn {
+  text-align: center;
+}
+
+#addCom {
+  text-align: center;
+}
+
+#formBtn {
   text-align: center;
 }
 
