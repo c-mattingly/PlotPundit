@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
 <main id="loginMain">
-    <% if (movies.length) { %> 
-        <% let today = new Date();
+    <% let today = new Date();
 
         let timeDay = today.getHours();
         let greeting = "";
@@ -14,7 +13,7 @@
         } else {
         greeting ="Good Evening ";
         }%> 
-
+    <% if (movies.length) { %> 
         <% if (user) { %>
             <h2> <%= greeting %> <%= user.name %></h2> 
             <h4>Here Are The Movies You've Rated</h4>
@@ -44,7 +43,7 @@
             <a href="/auth/google"><button>Login with Google</button></a>
         <% } %>       
     <% } else { %>
-        <h2>Hello <%= user.name %></h2>
+        <h2><%= greeting %> <%= user.name %></h2>
         <h4>Add Some Movies!</h4>
      
     <% } %>

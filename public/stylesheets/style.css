@@ -57,7 +57,7 @@ header {
   order: 2;
   text-align: right;
   background: black;
-  width: 390px;
+  width: auto;
 }
 
 #navLogin > a {
@@ -77,7 +77,11 @@ header {
 }
 
 #loginMain > h4 {
-  margin-top: -20px;
+  margin-top: -10px;
+}
+
+#loginMain > table {
+  margin: auto;
 }
 
 #loginMain > a {
@@ -86,20 +90,28 @@ header {
 }
 
 #addMovie {
-  margin-left: 20px;
+  margin-left: 50px;
+  width: 360px;
 }
 
 #addMovie > h1 {
+  margin-left: -80px;
   text-align:center;
 }
 
 #addMovieBtn {
+  margin-left: -80px;
   text-align: center;
+}
+
+#editMovie {
+  margin-left: 30px;
+  width: 360px;
 }
 
 #editMovie > h1 {
   text-align: center;
-  margin-left: 10px;
+  margin-left: -50px;
 }
 
 #movieShow {
@@ -107,12 +119,10 @@ header {
 }
 
 #movieShow > h2 {
+  margin-left: -20px;
   text-align: center;
 }
 
-#editMovie {
-  margin-left: 20px;
-}
 td > a {
   text-decoration: none;
   color: blue;
@@ -153,4 +163,80 @@ input[type=submit] {
 
 input[type=submit]:hover {
   color: grey;
+}
+
+@media only screen and (min-width: 760px) {
+
+  body {
+    max-width: 1920px;
+  }
+
+  #topNav {
+    width: 1920px;
+  }
+
+  #bottomNav {
+    width: 1920px;
+    
+  }
+
+  #menuNav > li {
+    padding-right: 100px;
+    padding-left: 40px;
+  }
+
+  #appTitle {
+    margin: auto;
+  }
+
+  #navLogin {
+    width: auto;
+  }
+
+  #loginMain {
+    width: auto;
+    font-size: 20px;
+  }
+
+  #addMovie {
+    margin: auto;
+    font-size: 20px;
+  }
+
+  #addMovie > h1 {
+    margin-left: -12px;
+  }
+
+  #addMovieBtn {
+    margin-left: -40px;
+  }
+
+  #centerBtn {
+    margin: auto;
+  }
+
+  #movieShow {
+    width: auto;
+    margin-left: auto;
+    font-size: 20px;
+  }
+
+  #listShow {
+    width: 390px;
+    margin: auto;
+  }
+
+  #editMovie {
+    margin: auto;
+    font-size: 20px;
+    width: 500px;
+  }
+
+  td {
+    padding: 5px;
+  }
+
+
+
+
 }

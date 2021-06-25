@@ -3,13 +3,13 @@
 <main id="editMovie">
     <h1>Edit Movie</h1>
 <form id="edit-movie" action="/movies/<%= movie.id %>?_method=PUT" method="POST">
-    <label>Title:</label>
+    <label><b>Title:</b></label>
     <input type="text" name="title" value="<%= movie.title %>" required><br><br>
-    <label>Release Year:</label>
+    <label><b>Release Year:</b></label>
     <input type="number" name="year" min="1900" value="<%= movie.year %>" required><br><br>
-    <label>Runtime (in Minutes):</label>
+    <label><b>Runtime <small>(in Minutes)</small>:</b></label>
     <input type="number" name="runtime" min="1" value="<%= movie.runtime %>" required><br><br>
-    <label>MPAA Rating:</label>
+    <label><b>MPAA Rating:</b></label>
     <select name="mpaa" value="<%= movie.mpaa %>">
         <option value="none" selected disabled hidden><%= movie.mpaa %></option>
         <option value="G">G</option>
@@ -19,7 +19,7 @@
         <option value="NC-17">NC-17</option>
         <option value="Not-Rated">Not-Rated</option>
     </select><br><br>
-    <label>Platform:</label>
+    <label><b>Platform:</b></label>
     <select name="platform">
         <option value="none" selected disabled hidden><%= movie.platform %></option>
         <option value="Netflix">Netflix</option>
@@ -34,15 +34,17 @@
         <option value="DVD">DVD</option>
         <option value="Other">Other</option>
     </select><br><br>
-    <label>Date Watched:</label>
+    <label><b>Date Watched:</b></label>
     <input type="date" name="dateWatched" required> <%= movie.dateWatched.toDateString() %> <br><br> 
-    <label>Rating (1-10):</label>
-    <input type="number" name="rating" min="0" max="10" step=".5" value="<%= movie.rating %>" required><br><br>
-    <label>Comments:</label>
+    <label><b>Rating (1-10):</b></label>
+    <input type="number" name="rating" min="0" max="10" step=".5" value="<%= movie.rating %>" required>
+    <br><br>
+    <div id="addMovieBtn"><input type="submit" value="Edit Movie"></div>
+    </form>
+    <label><b>Comments:</b></label>
     <% if (movie.comments.length) { %>
         <% movie.comments.forEach(function(c) { %>
             <form action="/movies/<%= movie._id %>?_method=PUT" method="POST"></form>
-            <i><%= c.createdAt.toLocaleDateString() %></i><br>
             <%= c.content %><br><br>
             </form>
         
@@ -52,9 +54,8 @@
 
       <% }) %>
     <% } %>
-
-    <div id="addMovieBtn"><input type="submit" value="Edit Movie"></div>
-</form>
+        <br><br>
+    
 </main>
 
 

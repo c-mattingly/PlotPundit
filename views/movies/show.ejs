@@ -2,6 +2,7 @@
  
 <main id="movieShow">
 <h2><%= movie.title %></h2>
+<div id="listShow">
     <br>
     <label><b>Year:</b></label> <%= movie.year %> 
     <br>
@@ -21,10 +22,11 @@
      <label><b>Rating:</b></label> <%= movie.rating %>
      <br>
      <br>
+    
      <% if (movie.comments.length) { %>
         <% movie.comments.forEach(function(c) { %>
-            <label><b>Comments:</b></label> <%= c.content %><br><br><br><br>
-            
+            <label><b>Comments:</b></label> <%= c.content %><br><br>
+        </div>
     <% }) %>
      <% } else { %>
         <form id="addCom" action="/movies/<%= movie._id %>" method="POST">
