@@ -11,7 +11,6 @@ module.exports = {
     update
 };
 
-
 function deleteMovie(req, res) {
     Movie.findByIdAndDelete(req.params.id, function() {
     res.redirect('/movies');

@@ -6,7 +6,6 @@ module.exports = {
     delete: deleteComment
 };
 
-
 function create(req, res) {
     Movie.findById(req.params.id, function(err, movie) {
       req.body.user = req.user._id;

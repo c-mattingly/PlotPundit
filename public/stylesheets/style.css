@@ -177,7 +177,6 @@ input[type=submit]:hover {
 
   #bottomNav {
     width: 1920px;
-    
   }
 
   #menuNav > li {
@@ -235,8 +234,5 @@ input[type=submit]:hover {
   td {
     padding: 5px;
   }
-
-
-
-
+  
 }

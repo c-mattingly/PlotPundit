@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const moviesCtrl =  require('../controllers/movies');
-const commentsCtrl =  require('../controllers/comments');
-
 
 router.get('/', isLoggedIn, moviesCtrl.index);
 router.get('/new', isLoggedIn, moviesCtrl.new);
