@@ -43,7 +43,7 @@ A MEN Stack CRUD Application for adding and rating movies you've seen. Login wit
 ----
 ----
 
-Click <a href="">HERE</a> for the fully deployed application on Heroku.
+Click <a href="https://plotpundit.herokuapp.com/">HERE</a> for the fully deployed application on Heroku.
 
 <a href="https://trello.com/b/8DAmrXcg/plot-pundit">Plot Pundit Trello Board</a>
 
